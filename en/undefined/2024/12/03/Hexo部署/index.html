@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/pink/pace-theme-loading-bar.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. 事前准备1.1 GitHub（必须，你需要注册一个GitHub帐号）1.2 Cloudflare （非必须，你需要注册一个Cloudflare帐号，这样你就可以将博客部署在CF的CDN里加速，但是你也可以直接使用GitHub.io分配的域名）1.3 域名 （非必须，你也可以使用免费域名，或者GitHub.io或Pages.dev分配的域名也可以） 2. 软件支持2.1 Node.js （必须">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexoの部署">
+<meta property="og:url" content="http://example.com/en/undefined/2024/12/03/Hexo%E9%83%A8%E7%BD%B2/index.html">
+<meta property="og:site_name" content="枫叶の故事">
+<meta property="og:description" content="1. 事前准备1.1 GitHub（必须，你需要注册一个GitHub帐号）1.2 Cloudflare （非必须，你需要注册一个Cloudflare帐号，这样你就可以将博客部署在CF的CDN里加速，但是你也可以直接使用GitHub.io分配的域名）1.3 域名 （非必须，你也可以使用免费域名，或者GitHub.io或Pages.dev分配的域名也可以） 2. 软件支持2.1 Node.js （必须">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/nodejs.jpg">
+<meta property="og:image" content="http://example.com/images/git_bash.jpg">
+<meta property="og:image" content="http://example.com/images/gitconfig.png">
+<meta property="og:image" content="http://example.com/images/gitkey.png">
+<meta property="og:image" content="http://example.com/images/rsa.png">
+<meta property="og:image" content="http://example.com/images/openrsa.png">
+<meta property="og:image" content="http://example.com/images/gitsetting.png">
+<meta property="og:image" content="http://example.com/images/newssh.png">
+<meta property="og:image" content="http://example.com/images/donessh.png">
+<meta property="og:image" content="http://example.com/images/sshrecord.png">
+<meta property="article:published_time" content="2024-12-03T03:05:44.000Z">
+<meta property="article:modified_time" content="2024-12-17T02:25:33.197Z">
+<meta property="article:author" content="枫叶の归宿">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/nodejs.jpg">
+
+
+<link rel="canonical" href="http://example.com/en/undefined/2024/12/03/Hexo%E9%83%A8%E7%BD%B2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/undefined/2024/12/03/Hexo%E9%83%A8%E7%BD%B2/","path":"en/undefined/2024/12/03/Hexo部署/","title":"Hexoの部署"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexoの部署 | 枫叶の故事</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-comment-ten-neon.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">枫叶の故事</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%BA%8B%E5%89%8D%E5%87%86%E5%A4%87"><span class="nav-text">1. 事前准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E8%BD%AF%E4%BB%B6%E6%94%AF%E6%8C%81"><span class="nav-text">2. 软件支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E9%85%8D%E7%BD%AE-Git-%E5%AF%86%E9%92%A5%E5%B9%B6%E8%BF%9E%E6%8E%A5%E8%87%B3-Github"><span class="nav-text">3. 配置 Git 密钥并连接至 Github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%88%9D%E5%A7%8B%E5%8C%96-Hexo-%E5%8D%9A%E5%AE%A2"><span class="nav-text">4. 初始化 Hexo 博客</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%B0%86%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%8C%82%E8%BD%BD%E5%88%B0-GitHub-Pages"><span class="nav-text">5.将静态博客挂载到 GitHub Pages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-%E5%B0%86%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%8C%82%E8%BD%BD%E5%88%B0-Cloudflare-Pages"><span class="nav-text">6.将静态博客挂载到 Cloudflare Pages</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="枫叶の归宿"
+      src="/images/maple.jpg">
+  <p class="site-author-name" itemprop="name">枫叶の归宿</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2024/12/03/Hexo%E9%83%A8%E7%BD%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/maple.jpg">
+      <meta itemprop="name" content="枫叶の归宿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫叶の故事">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Hexoの部署 | 枫叶の故事">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexoの部署
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-12-03 11:05:44" itemprop="dateCreated datePublished" datetime="2024-12-03T11:05:44+08:00">2024-12-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-12-17 10:25:33" itemprop="dateModified" datetime="2024-12-17T10:25:33+08:00">2024-12-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Platform/" itemprop="url" rel="index"><span itemprop="name">Platform</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Platform/Hexo%E3%81%AE%E9%83%A8%E7%BD%B2/" itemprop="url" rel="index"><span itemprop="name">Hexoの部署</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/en/undefined/2024/12/03/Hexo%E9%83%A8%E7%BD%B2/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/en/undefined/2024/12/03/Hexo%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="1-事前准备"><a href="#1-事前准备" class="headerlink" title="1. 事前准备"></a>1. 事前准备</h1><p>1.1 <strong>GitHub</strong>（必须，你需要注册一个GitHub帐号）<br>1.2 <strong>Cloudflare</strong> （非必须，你需要注册一个Cloudflare帐号，这样你就可以将博客部署在CF的CDN里加速，但是你也可以直接使用GitHub.io分配的域名）<br>1.3 <strong>域名</strong> （非必须，你也可以使用免费域名，或者GitHub.io或Pages.dev分配的域名也可以）<br><br></p>
+<h1 id="2-软件支持"><a href="#2-软件支持" class="headerlink" title="2. 软件支持"></a>2. 软件支持</h1><p>2.1 <strong>Node.js</strong> （<strong>必须</strong>） <a target="_blank" rel="noopener" href="https://nodejs.org/en">Official link</a></p>
+<ul>
+<li>打开Node官网，下载和自己系统相配的Node的安装程序，否则会出现安装问题。</li>
+<li>下载后安装，安装的目录可以使用默认目录 <strong><code>C:/Program Files/nodejs/</code></strong></li>
+<li>安装完成后，检查是否安装成功。在键盘按下 <strong><code>Win + R</code></strong> 键，输入 <strong><code>CMD</code></strong> ，然后回车，打开CMD窗口，执行 <strong><code>node -v</code></strong> 命令，看到版本信息，则说明安装成功。<br><img src="/./images/nodejs.jpg" alt="成功安装"></li>
+<li>修改npm源。npm下载各种模块。（用于在中国地区, 因为下载速度较慢）<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://mirrors.huaweicloud.com/repository/npm/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<p>2.2 <strong>Git</strong> （<strong>必须</strong>） <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Official link</a></p>
+<ul>
+<li>下载后傻瓜式安装Git即可，安装的目录最好使用默认目录 <strong>C:&#x2F;Program Files&#x2F;Git</strong></li>
+<li>点击电脑左下角开始即可看见Git CMD、Git Bash、Git GUI。<ul>
+<li><strong>Git CMD</strong> 是windows 命令行的指令风格</li>
+<li><strong>Git Bash</strong> 是linux系统的指令风格（建议使用）</li>
+<li><strong>Git GUI</strong> 是图形化界面（新手学习不建议使用）</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<p>2.3 <strong>VSCode</strong> （<strong>非必须</strong>，这是一款轻量型的代码编辑器，可以帮助你养成一个很好的编程习惯） <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Official link</a></p>
+<h1 id="3-配置-Git-密钥并连接至-Github"><a href="#3-配置-Git-密钥并连接至-Github" class="headerlink" title="3. 配置 Git 密钥并连接至 Github"></a>3. 配置 Git 密钥并连接至 Github</h1><p><strong>3.1 查看git的全局配置</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config -l  //查看所有配置</span><br><span class="line">git config --system --list //查看系统配置</span><br><span class="line">git config --global --list //查看用户（全局）配置</span><br></pre></td></tr></table></figure>
+<p><img src="/images/git_bash.jpg" alt="GitBash"></p>
+<br>
+
+<p><strong>3.2 配置用户名和邮箱</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>通过 <code>git config -l</code> 检查是否配置成功。（ <em><strong>确保看到user.name 和 user.email，没看到代表没有配置到</strong></em> ）<br><img src="/images/gitconfig.png" alt="git配置"></p>
+<br>
+
+<p><strong>3.3 配置公钥连接Github</strong></p>
+<ol>
+<li>执行以下命令生成 ssh公钥，此公钥用于你的计算机连接Github<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的github邮箱&quot;</span><br></pre></td></tr></table></figure>
+ 提示 <em><strong>Enter file in which to save the key</strong></em> 直接 <strong>一路回车</strong> 即可，新手小白不推荐设置密钥<br> <img src="/images/gitkey.png" alt="生成ssh-key"><br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到以下文件<ul>
+<li><code>id_rsa</code> 私钥</li>
+<li><code>id_rsa.pub</code> 公钥<br> <img src="/images/rsa.png" alt=".shh路径"><br> 用记事本打开上述图片中的公钥id_rsa.pub，复制里面的内容，然后开始在github中配置ssh密钥。<br> <img src="/images/openrsa.png"></li>
+</ul>
+</li>
+</ol>
+<br>
+
+<ol start="2">
+<li>将 <strong>SSH KEY</strong> 配置到 GitHub<br>—  进入 <strong>github</strong> &gt; 点击 <strong>右上角头像</strong><br><img src="/images/gitsetting.png" alt="打开github设置"></li>
+</ol>
+<br>
+
+<p>—  选择 <strong>settings</strong> &gt; 进入设置页选择<br><img src="/images/newssh.png" alt="创建sshkey"></p>
+<br>
+
+<p>—  左边栏选择 <strong>SSH and GPG keys</strong> &gt; 点击 <strong>New SSH Key</strong><br><img src="/images/donessh.png" alt="完成创建"></p>
+<br>
+
+<p>—  这里必须要有展示你刚创建的记录<br><img src="/images/sshrecord.png" alt="ssh记录"></p>
+<br>
+
+<ol start="3">
+<li>测试链接，输入以下命令<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+ 第一次连接会提示 <code>Are you sure you want to continue connecting (yes/no/[fingerprint])?</code> ，输入 <strong>yes</strong> 即可<br> [暂无图片可展示，以后补上]<br><br> 出现连接到账户的信息，说明已经大功告成，至此完成了环境准备工作。<br> [暂无图片可展示，以后补上]</li>
+</ol>
+<p><strong>3.4 创建GitHub.io仓库</strong></p>
+<ul>
+<li><p>点击右上角的 <code>+</code> 按钮，选择<strong>New repository</strong>，创建一个 <code>&lt;用户名&gt;.github.io</code> 的仓库。</p>
+</li>
+<li><p>仓库名字的格式必须为： <code>&lt;用户名&gt;.github.io</code> (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)</p>
+</li>
+<li><p>可见性必须选择 <code>Public</code> 方便第一次部署检查问题，点击 <strong>Creat repository</strong> 进行创建即可  </p>
+<pre><code>  [图片上传]
+</code></pre>
+</li>
+</ul>
+<h1 id="4-初始化-Hexo-博客"><a href="#4-初始化-Hexo-博客" class="headerlink" title="4. 初始化 Hexo 博客"></a>4. 初始化 Hexo 博客</h1><ul>
+<li><p>创建一个文件夹来保存博客源码（我这里选的路径为<code>D:/Hexo-Blog</code>），在文件夹内右键鼠标，选择<code>Open Git Bash here</code>  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli &amp;&amp; hexo -v</span><br></pre></td></tr></table></figure>
+
+<pre><code>  [图片上传]  
+</code></pre>
+</li>
+<li><p>在<code>Git BASH</code>输入如下命令安装 Hexo  </p>
+<pre><code>  [图片上传]  
+</code></pre>
+</li>
+<li><p>安装完后输入<code>hexo -v</code>验证是否安装成功。</p>
+<pre><code>  [图片上传]  
+</code></pre>
+</li>
+<li><p>初始化 Hexo 项目安装相关依赖。  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog-demo</span><br><span class="line">cd blog-demo</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure>
+
+<pre><code>  [图片上传]  
+</code></pre>
+</li>
+<li><p>初始化项目后，<code>blog-demo</code>有如下结构：  </p>
+<pre><code>  [图片上传]&lt;br&gt;
+</code></pre>
+</li>
+<li><p>node_modules：依赖包</p>
+</li>
+<li><p>scaffolds：生成文章的一些模板</p>
+</li>
+<li><p>source：用来存放你的文章</p>
+</li>
+<li><p>themes：主题</p>
+</li>
+<li><p>.npmignore：发布时忽略的文件（可忽略）</p>
+</li>
+<li><p>_config.landscape.yml：主题的配置文件</p>
+</li>
+<li><p>config.yml：博客的配置文件</p>
+</li>
+<li><p>package.json：项目名称、描述、版本、运行和开发等信</p>
+</li>
+<li><p>输入<code>hexo cl &amp;&amp; hexo s</code>启动项目</p>
+<pre><code>  [图片上传]&lt;br&gt;
+</code></pre>
+</li>
+<li><p>打开浏览器，输入地址：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ，看到下面的效果，说明你的博客已经构建成功了。  </p>
+<pre><code>  [图片上传]&lt;br&gt;
+</code></pre>
+</li>
+</ul>
+<h1 id="5-将静态博客挂载到-GitHub-Pages"><a href="#5-将静态博客挂载到-GitHub-Pages" class="headerlink" title="5.将静态博客挂载到 GitHub Pages"></a>5.将静态博客挂载到 GitHub Pages</h1><p>5.1 安装 hexo-deployer-git</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>5.2 修改 <code>_config.yml</code> 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。<br>修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为<code>main</code>代表主分支（注意缩进）。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:cmliussss2024/cmliussss2024.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+
+<p>5.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo三连）。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Git BASH终端</span><br><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy  </span><br><span class="line"></span><br><span class="line">// 或者</span><br><span class="line"></span><br><span class="line">// VSCODE终端</span><br><span class="line">hexo cl; hexo g; hexo d</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>hexo clean：删除之前生成的文件，可以用<code>hexo cl</code>缩写。</p>
+</li>
+<li><p>hexo generate：生成静态文章，可以用<code>hexo g</code>缩写</p>
+</li>
+<li><p>hexo deploy：部署文章，可以用<code>hexo d</code>缩写</p>
+<pre><code>  [图片上传]&lt;br&gt;
+</code></pre>
+</li>
+</ul>
+<p>如果出现Deploy done，则说明部署成功了。</p>
+<pre><code>    [图片上传]&lt;br&gt;
+</code></pre>
+<p>稍等两分钟，打开浏览器访问：<a target="_blank" rel="noopener" href="https://mapleblog.github.io/">https://mapleblog.github.io</a> ，这时候我们就可以看到博客内容了。</p>
+<pre><code>    [图片上传]&lt;br&gt;
+</code></pre>
+<h1 id="6-将静态博客挂载到-Cloudflare-Pages"><a href="#6-将静态博客挂载到-Cloudflare-Pages" class="headerlink" title="6.将静态博客挂载到 Cloudflare Pages"></a>6.将静态博客挂载到 Cloudflare Pages</h1><p>6.1 在 <code>Workers 和 Pages</code> 中选择 <code>Pages</code> 的 <code>连接到 Git</code></p>
+<pre><code>    [图片上传]
+    [图片上传]&lt;br&gt;
+</code></pre>
+<p>6.2 然后登录你Blog仓库对应的GitHub帐号</p>
+<pre><code>    [图片上传]
+    [图片上传]&lt;br&gt;
+</code></pre>
+<p>6.3 点击<code>保存并部署</code>后等待部署完成即可。</p>
+<pre><code>    [图片上传]&lt;br&gt;
+</code></pre>
+<p>6.4 提示<code>成功！您的项目已部署到以下区域：全球</code>后，浏览器访问：<a target="_blank" rel="noopener" href="https://cmliussss2024-github-io.pages.dev/">https://cmliussss2024-github-io.pages.dev</a> ，这时候我们就可以看到博客内容了。  </p>
+<pre><code>    [图片上传]&lt;br&gt;
+</code></pre>
+<p><em>这时你也就可以将你的&lt;用户名&gt;.github.io的仓库设置为Private私库了</em><br></p>
+<p>6.5 如果你有自己的域名，你可以在这里绑定你自己的自定义域，即可  </p>
+<pre><code>    [图片上传]&lt;br&gt;
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/undefined/2024/12/03/SnipeIT/" rel="prev" title="SnipeIT ( Ubuntu 22.04 )">
+                  <i class="fa fa-angle-left"></i> SnipeIT ( Ubuntu 22.04 )
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/undefined/2024/12/03/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/" rel="next" title="Hexoの夜间模式">
+                  Hexoの夜间模式 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">枫叶の归宿</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"en","enable":true,"serverURL":"waline-comment-ten-neon.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"login":"force","placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/en/undefined/2024/12/03/Hexo%E9%83%A8%E7%BD%B2/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+  
+
+      
+        <script async src=https://cdn.jsdelivr.net/npm/hexo-next-mouse-effect@latest/click/fireWorks.js></script>
+      
+
+      s
+        <script async src=https://cdn.jsdelivr.net/npm/hexo-next-mouse-effect@latest/move/fairyDustCursor.js></script>
+      
+    <script>
+    const snowflakes = ["⛄", "❄", "❄", "❆", "❅", "✥"];
+    // 创建雪花
+    function createSnowflake() {
+        const snowflake = document.createElement("span");
+        snowflake.classList.add("snowflake");
+        const randomIndex = Math.floor(Math.random() * snowflakes.length);
+        snowflake.textContent = snowflakes[randomIndex];
+        
+        // 起始位置
+        /* 80%概率 生成在页面两侧 30% 的位置
+        const probability = Math.random();
+        let startPosition = Math.random() * 100;
+
+        if (probability < 0.8) {
+            startPosition = Math.random() < 0.5 ? Math.random() * 30 : (Math.random() * 30) + 70;
+        }
+        snowflake.style.left = `${startPosition}vw`;
+        */
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.top = `-30px`;
+        // 雪花大小与透明度
+        const size = Math.random() * 18 + 10;
+        snowflake.style.fontSize = `${size}px`;
+        const opacity = Math.random() * 0.6 + (size > 18 ? 0.4 : 0);
+        snowflake.style.setProperty("--opacity", opacity);
+        // 动画持续时间
+        const fallDuration = Math.random() * 10 + 5;
+        // 旋转持续时间
+        const rotateDuration = Math.random() * 3 + 1;
+
+        snowflake.style.animationDuration = `${fallDuration}s, ${fallDuration}s`; // 向 CSS 添加淡出动画的持续时间
+        // 横向幅度
+        const translateX = (Math.random() * 500 - 200);
+        snowflake.style.setProperty("--translateX", `${translateX}px`);
+        // 纵向幅度
+        snowflake.style.setProperty("--translateY", `${window.innerHeight * 0.3}px`);
+
+        document.body.appendChild(snowflake);
+        // 移除雪花
+        setTimeout(() => {
+            snowflake.remove();
+        }, fallDuration * 1000);
+    }
+    
+    function snowfallAnimation() {
+        // 载入时若边栏是隐藏状态则不加载雪花
+        const sidebarnav = document.querySelector('.sidebar');
+        const sidebarnavdisplay = window.getComputedStyle(sidebarnav).getPropertyValue('display'); 
+        if (sidebarnavdisplay !== 'none') {
+            createSnowflake();
+        }
+        setTimeout(snowfallAnimation, 150); // 生成速度，毫秒
+    }
+    snowfallAnimation();
+</script>
+
+</body>
+</html>
