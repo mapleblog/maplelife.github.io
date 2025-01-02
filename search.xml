@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>南瓜饼</title>
+      <link href="/2025/01/02/%E5%8D%97%E7%93%9C%E9%A5%BC/"/>
+      <url>/2025/01/02/%E5%8D%97%E7%93%9C%E9%A5%BC/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Life </category>
+          
+          <category> Cooking </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>铁板豆腐</title>
       <link href="/2025/01/02/Life/"/>
       <url>/2025/01/02/Life/</url>
@@ -29,7 +50,7 @@
       <link href="/2024/12/11/Hexo%E3%81%AE%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/"/>
       <url>/2024/12/11/Hexo%E3%81%AE%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2/</url>
       
-        <content type="html"><![CDATA[<h1 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h1><ul><li><strong>Waline官方文档</strong></li><li><strong>LeanCloud账号</strong></li><li><strong>Versel服务端</strong></li><li><strong>域名绑定</strong> （非必须）</li></ul><h1 id="LeanCloud注册"><a href="#LeanCloud注册" class="headerlink" title="LeanCloud注册"></a>LeanCloud注册</h1><ol><li><a href="https://console.leancloud.app/login">登录</a> 或 <a href="https://console.leancloud.app/register">注册</a> LeanCloud 国际版</li><li>点击左上角 <a href="https://console.leancloud.app/apps">创建应用</a><ul><li>App name（必填）</li><li>选择免费 <strong>Developer</strong> 开发板</li></ul></li></ol><p><img src="/images/leancloud_create_app.png" alt="创建应用">  </p><ol start="3"><li>选择刚创建的应用</li></ol><p><img src="/images/select_leancloud_app.png" alt="选择应用">  </p><ol start="4"><li>点击 <strong>Settings</strong> 然后 <strong>App Keys</strong>，记录 AppID | AppKey | MasterKey，后面会用到</li></ol><p><img src="/images/app_clientid_key.png" alt="选择应用">  </p><h1 id="Vercel服务端部署"><a href="#Vercel服务端部署" class="headerlink" title="Vercel服务端部署"></a>Vercel服务端部署</h1><div style="text-align: center;">  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwalinejs%2Fwaline%2Ftree%2Fmain%2Fexample" target="_blank" style="display: inline-block; padding: 2px 21px; background-color: #000000; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">    Deploy  </a>  <div style="margin-top: 0px; font-size: 12px; color: #808080;">    Vercel  </div></div><ol><li><p>点击<strong>上方按钮</strong>，跳转到 Vercel 进行 Server端部署  </p></li><li><p>登录 <strong>GitHub</strong></p></li></ol><p><img src="/images/vercel_connect.jpg" alt="登录GitHub">  </p><ol start="3"><li>点击 <strong>Authorize Vercel</strong></li></ol><p><img src="/images/github_authorize_vercel.jpg" alt="搜全Vercel访问GitHub">  </p><ol start="4"><li>在 <strong>Git Scope</strong> 选择 <strong>GitHub Account</strong></li></ol><p><img src="/images/add_github_account.jpg" alt="添加GitHub账号">  </p><ol start="5"><li><strong>安装 Vercel</strong> 到 <strong>全部</strong> &#x2F; <strong>指定</strong> 的 Repositories</li></ol><p><img src="/images/install_vercel2github.jpg" alt="安装Vercel到GitHub Repo">  </p><ol start="6"><li>确保 <strong>Git Scope</strong> 出现你的 <strong>GitHub账户名</strong>，<br>然后在 <strong>Private Repository Name</strong> 创建新的repo<br>点击 <strong>Create</strong></li></ol><p><img src="/images/repos_name.jpg" alt="创建Vercel Repo">  </p><p> 7. </p><p><img src="/images/vercel_deployment.jpg" alt="开始部署Vercel"><br><img src="/images/vercel_successful.jpg" alt="成功部署"><br><img src="/images/vercel_main.jpg" alt="Vercel主页"><br><img src="/images/vercel_settings.jpg" alt="Vercel设置"><br><img src="/images/repos_name.jpg" alt="创建Vercel Repo">  </p>]]></content>
+        <content type="html"><![CDATA[<h1 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h1><ul><li><strong>Waline官方文档</strong></li><li><strong>LeanCloud账号</strong></li><li><strong>Versel服务端</strong></li><li><strong>域名绑定</strong> （非必须）</li></ul><h1 id="LeanCloud注册"><a href="#LeanCloud注册" class="headerlink" title="LeanCloud注册"></a>LeanCloud注册</h1><ol><li><a href="https://console.leancloud.app/login">登录</a> 或 <a href="https://console.leancloud.app/register">注册</a> LeanCloud 国际版</li><li>点击左上角 <a href="https://console.leancloud.app/apps">创建应用</a><ul><li>App name（必填）</li><li>选择免费 <strong>Developer</strong> 开发板</li></ul></li></ol><p><img src="/images/leancloud_create_app.png" alt="创建应用"><br><br> 3. 选择刚创建的应用  </p><p><img src="/images/select_leancloud_app.png" alt="选择应用"><br></p><ol start="4"><li>点击 <strong>Settings</strong> 然后 <strong>App Keys</strong>，记录 AppID | AppKey | MasterKey，后面会用到</li></ol><p><img src="/images/app_clientid_key.png" alt="选择应用"><br></p><h1 id="Vercel服务端部署"><a href="#Vercel服务端部署" class="headerlink" title="Vercel服务端部署"></a>Vercel服务端部署</h1><div style="text-align: center;">  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwalinejs%2Fwaline%2Ftree%2Fmain%2Fexample" target="_blank" style="display: inline-block; padding: 2px 21px; background-color: #000000; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">    Deploy  </a>  <div style="margin-top: 0px; font-size: 12px; color: #808080;">    Vercel  </div></div><ol><li><p>点击<strong>上方按钮</strong>，跳转到 Vercel 进行 Server端部署  </p></li><li><p>登录 <strong>GitHub</strong></p></li></ol><p><img src="/images/vercel_connect.jpg" alt="登录GitHub"><br></p><ol start="3"><li>点击 <strong>Authorize Vercel</strong></li></ol><p><img src="/images/github_authorize_vercel.jpg" alt="搜全Vercel访问GitHub"><br></p><ol start="4"><li>在 <strong>Git Scope</strong> 选择 <strong>GitHub Account</strong></li></ol><p><img src="/images/add_github_account.jpg" alt="添加GitHub账号"><br></p><ol start="5"><li><strong>安装 Vercel</strong> 到 <strong>全部</strong> &#x2F; <strong>指定</strong> 的 Repositories</li></ol><p><img src="/images/install_vercel2github.jpg" alt="安装Vercel到GitHub Repo"><br></p><ol start="6"><li>确保 <strong>Git Scope</strong> 出现你的 <strong>GitHub账户名</strong>，<br>然后在 <strong>Private Repository Name</strong> 创建新的repo<br>点击 <strong>Create</strong></li></ol><p><img src="/images/repos_name.jpg" alt="创建Vercel Repo"><br></p><ol start="7"><li>耐心地等待部署</li></ol><p><img src="/images/vercel_deployment.jpg" alt="开始部署Vercel"><br></p><ol start="8"><li>成功部署后，将会看到 <strong>Congratulations!</strong> 然后点击 <strong>Continue to Dashboard</strong></li></ol><p><img src="/images/vercel_successful.jpg" alt="成功部署"><br>  </p><ol start="9"><li>你将看到 <strong>Vercel</strong> 的主页面</li></ol><p><img src="/images/vercel_main.jpg" alt="Vercel主页"><br></p><ol start="10"><li>点击 <strong>Settings</strong><br>您需要在图中的3号创建三个新的环境变量： <strong>LEAN_ID</strong> 、 <strong>LEAN_KEY</strong> 和 <strong>LEAN_MASTER_KEY</strong>。<br>每个变量的值对应于从 <strong>LeanCloud</strong> 保存的凭据：<br><strong><code>APP ID</code></strong> 对应于 <strong><code>LEAN_ID</code></strong> 变量的值，<br><strong><code>APP Key</code></strong> 对应于 <strong><code>LEAN_KEY</code></strong> 变量的值，<br><strong><code>Master Key</code></strong> 对应于 <strong><code>LEAN_MASTER_KEY</code></strong> 变量的值。</li></ol><p><img src="/images/vercel_settings_1.jpg" alt="Vercel设置"><br></p><ol start="11"><li>一旦环境变量配置完成，您需要重新部署您的应用程序。点击项目顶部的 <strong><code>Deployments</code></strong> 标签，在列表顶部找到最新的部署记录，然后在右侧的下拉菜单中选择 <strong><code>Redeploy</code></strong> 。</li></ol><p><img src="/images/vercel_redeploy.png" alt="vercel重部署"><br></p><ol start="12"><li>如果一切正常，Vercel 会将您重定向到概览页面以开始重新部署。等待 STATUS 状态更改为 Ready。现在，您可以点击 Visit 访问该网站。此链接就是您的服务器地址。</li></ol><p><img src="/images/vercel_redeploy.png" alt="重部署完毕"><br></p>]]></content>
       
       
       <categories>
@@ -69,7 +90,7 @@
       <link href="/2024/12/05/%E7%A6%BB%E5%88%AB/"/>
       <url>/2024/12/05/%E7%A6%BB%E5%88%AB/</url>
       
-        <content type="html"><![CDATA[<h1 id="与世长辞"><a href="#与世长辞" class="headerlink" title="与世长辞"></a>与世长辞</h1><p>您已经离开了三个月，辛苦长期和病痛抗战的您<br>很多时候上班都会经过您的家</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="与世长辞"><a href="#与世长辞" class="headerlink" title="与世长辞"></a>与世长辞</h1><p>我一直都相信</p>]]></content>
       
       
       <categories>
