@@ -19,10 +19,12 @@
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
+    "hexo-generator-i18n": "^0.0.10",
     "hexo-generator-index": "^4.0.0",
     "hexo-generator-search": "^2.4.3",
     "hexo-generator-tag": "^2.0.0",
     "hexo-generator-topindex": "^0.3.0",
+    "hexo-helper-live2d": "^3.1.1",
     "hexo-hide-posts": "^0.4.3",
     "hexo-next-darkmode": "^0.1.11",
     "hexo-next-mouse-effect": "^3.0.0",
@@ -33,6 +35,7 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.21.1",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-wordcount": "^6.0.1",
+    "live2d-widget-model-wanko": "^1.0.5"
   }
 }

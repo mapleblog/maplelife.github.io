@@ -101,17 +101,133 @@ ssh -T git@github.com
 ```
 
 	第一次连接会提示 `Are you sure you want to continue connecting (yes/no/[fingerprint])?` ，输入 **yes** 即可
-	{暂无图片可展示，以后补上}
+		[暂无图片可展示，以后补上]<br>
 
 	出现连接到账户的信息，说明已经大功告成，至此完成了环境准备工作。
-	{暂无图片可展示，以后补上}
+		[暂无图片可展示，以后补上]  
+
 
 **3.4 创建GitHub.io仓库**
 - 点击右上角的 `+` 按钮，选择**New repository**，创建一个 `<用户名>.github.io` 的仓库。
 - 仓库名字的格式必须为： `<用户名>.github.io` (注意：前缀必须为用户名，此为预览博客需要，后期可修改仓库名)
-- 可见性必须选择 `Public` 方便第一次部署检查问题，点击 **Creat repository** 进行创建即可
+- 可见性必须选择 `Public` 方便第一次部署检查问题，点击 **Creat repository** 进行创建即可  
+
+
+		[图片上传]  
+
+
+# 4. 初始化 Hexo 博客  
+
+- 创建一个文件夹来保存博客源码（我这里选的路径为`D:/Hexo-Blog`），在文件夹内右键鼠标，选择`Open Git Bash here`  
+```shell
+npm install -g hexo-cli && hexo -v
+```
+
+		[图片上传]  
 
 
 
 
+- 在`Git BASH`输入如下命令安装 Hexo  
 
+		[图片上传]  
+
+
+- 安装完后输入`hexo -v`验证是否安装成功。
+
+		[图片上传]  
+
+- 初始化 Hexo 项目安装相关依赖。  
+```shell
+hexo init blog-demo
+cd blog-demo
+npm i
+```
+
+		[图片上传]  
+
+- 初始化项目后，`blog-demo`有如下结构：  
+
+		[图片上传]<br>
+
+- node_modules：依赖包
+- scaffolds：生成文章的一些模板
+- source：用来存放你的文章
+- themes：主题
+- .npmignore：发布时忽略的文件（可忽略）
+- _config.landscape.yml：主题的配置文件
+- config.yml：博客的配置文件
+- package.json：项目名称、描述、版本、运行和开发等信
+
+- 输入`hexo cl && hexo s`启动项目
+
+		[图片上传]<br>
+
+- 打开浏览器，输入地址：http://localhost:4000/ ，看到下面的效果，说明你的博客已经构建成功了。  
+
+		[图片上传]<br>
+
+# 5.将静态博客挂载到 GitHub Pages
+5.1 安装 hexo-deployer-git
+```shell
+npm install hexo-deployer-git --save
+```
+
+5.2 修改 `_config.yml` 文件
+在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。
+修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为`main`代表主分支（注意缩进）。
+```shell
+deploy:
+  type: git
+  repository: git@github.com:cmliussss2024/cmliussss2024.github.io.git
+  branch: main
+```
+
+5.3 修改好配置后，运行如下命令，将代码部署到 GitHub（Hexo三连）。
+```shell
+// Git BASH终端
+hexo clean && hexo generate && hexo deploy  
+
+// 或者
+
+// VSCODE终端
+hexo cl; hexo g; hexo d
+```
+
+- hexo clean：删除之前生成的文件，可以用`hexo cl`缩写。
+- hexo generate：生成静态文章，可以用`hexo g`缩写
+- hexo deploy：部署文章，可以用`hexo d`缩写
+
+		[图片上传]<br>
+
+如果出现Deploy done，则说明部署成功了。
+
+		[图片上传]<br>
+
+稍等两分钟，打开浏览器访问：https://mapleblog.github.io ，这时候我们就可以看到博客内容了。
+
+		[图片上传]<br>
+
+# 6.将静态博客挂载到 Cloudflare Pages
+6.1 在 `Workers 和 Pages` 中选择 `Pages` 的 `连接到 Git`
+
+		[图片上传]
+		[图片上传]<br>
+
+6.2 然后登录你Blog仓库对应的GitHub帐号
+
+		[图片上传]
+		[图片上传]<br>
+
+6.3 点击`保存并部署`后等待部署完成即可。
+
+		[图片上传]<br>
+
+6.4 提示`成功！您的项目已部署到以下区域：全球`后，浏览器访问：https://cmliussss2024-github-io.pages.dev ，这时候我们就可以看到博客内容了。  
+
+		[图片上传]<br>
+*这时你也就可以将你的<用户名>.github.io的仓库设置为Private私库了*<br>
+
+6.5 如果你有自己的域名，你可以在这里绑定你自己的自定义域，即可  
+
+		[图片上传]<br>

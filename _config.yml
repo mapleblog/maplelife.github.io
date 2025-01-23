@@ -8,13 +8,26 @@ subtitle: ''
 description: ''
 keywords:
 author: 枫叶の归宿
-language: en
+#language: en
+language:
+  - zh-CN
+  - en
+i18n:
+  type:
+    - post
+    - page
+  generator:
+    - index
+    - archive
+    - category
+    - tag
+
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
-permalink: :year/:month/:day/:title/
+permalink: :lang/:year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -63,6 +76,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
+  single_language_index: true
 
 # Category & Tag
 default_category: uncategorized
@@ -171,3 +185,25 @@ filter_optimize:
   # set the priority of this plugin,
   # lower means it will be executed first, default of Hexo is 10
   priority: 12
+
+live2d:
+  enable: true          # 是否显示看板娘
+  scriptFrom: local      # 脚本来源，local表示本地，也可以使用jsdelivr等CDN
+  pluginRootPath: live2dw/ # 插件根目录
+  pluginJsPath: lib/      # 插件JS目录
+  pluginModelPath: assets/ # 插件模型目录
+  tagMode: false         # 标签模式
+  debug: false           # 调试模式
+  react.opacity: 
+  dialog.enable: true
+  dialog.hitokoto: 
+  model:
+    use: live2d-widget-model-wanko # 使用的模型
+  display:
+    position: right   # 显示位置，可以是left或right
+    width: 300         # 宽度
+    height: 300        # 高度
+    hOffset: 0
+    vOffset: -20
+  mobile:            # 手机端设置
+    show: true       # 是否在手机端显示
