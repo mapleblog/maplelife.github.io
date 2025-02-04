@@ -169,6 +169,259 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2025/01/23/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/maple.jpg">
+      <meta itemprop="name" content="枫叶の归宿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫叶の故事">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 枫叶の故事">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/undefined/2025/01/23/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">Hexoの夜间模式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-01-23 21:26:02" itemprop="dateCreated datePublished" datetime="2025-01-23T21:26:02+08:00">2025-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-11 09:28:22" itemprop="dateModified" datetime="2024-12-11T09:28:22+08:00">2024-12-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Platform/" itemprop="url" rel="index"><span itemprop="name">Platform</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Platform/Hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">Hexoの夜间模式</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/undefined/2025/01/23/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/undefined/2025/01/23/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="添加夜间模式按钮"><a href="#添加夜间模式按钮" class="headerlink" title="添加夜间模式按钮"></a><em>添加夜间模式按钮</em></h4><p>步骤一 安装夜间模式插件 :</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-next-darkmode --save</span><br></pre></td></tr></table></figure>
+<p>步骤二 往 NexT 主题的 _config.yml 配置文件里添加以下内容 :</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Darkmode JS</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js</span></span><br><span class="line">darkmode_js:</span><br><span class="line">  enable: true</span><br><span class="line">  bottom: &#x27;64px&#x27; # default: &#x27;32px&#x27;</span><br><span class="line">  right: &#x27;unset&#x27; # default: &#x27;32px&#x27;</span><br><span class="line">  left: &#x27;32px&#x27; # default: &#x27;unset&#x27;</span><br><span class="line">  time: &#x27;0.5s&#x27; # default: &#x27;0.3s&#x27;</span><br><span class="line">  mixColor: &#x27;transparent&#x27; # default: &#x27;#fff&#x27;</span><br><span class="line">  backgroundColor: &#x27;transparent&#x27; # default: &#x27;#fff&#x27;</span><br><span class="line">  buttonColorDark: &#x27;#100f2c&#x27; # default: &#x27;#100f2c&#x27;</span><br><span class="line">  buttonColorLight: &#x27;#fff&#x27; # default: &#x27;#fff&#x27;</span><br><span class="line">  isActivated: false # default false</span><br><span class="line">  saveInCookies: true # default: true</span><br><span class="line">  label: &#x27;🌓&#x27; # default: &#x27;&#x27;</span><br><span class="line">  autoMatchOsTheme: true # default: true</span><br><span class="line">  libUrl: # Set custom library cdn url for Darkmode.js</span><br></pre></td></tr></table></figure>
+<ul>
+<li>isActivated: true：默认激活暗黑&#x2F;夜间模式，请始终与 saveInCookies: false、autoMatchOsTheme: false 一起使用；同时需要在 NexT 主题的 _config.yml 配置文件里设置 pjax: true，即启用 Pjax。</li>
+</ul>
+<h4 id="自定义css样式"><a href="#自定义css样式" class="headerlink" title="自定义css样式"></a>自定义css样式</h4><p>暗黑&#x2F;夜间模式激活后，插件会将 darkmode–activated CSS 类添加到 body 标签上，你可以利用它覆盖插件默认自带的样式（如下所示），这样就可以实现暗黑&#x2F;夜间模式 CSS 样式的高度自定义。<br>在themes&#x2F;next&#x2F;source&#x2F;css&#x2F;_custom.styl添加以下代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">.darkmode--activated &#123;</span><br><span class="line">  --body-bg-color: #282828;</span><br><span class="line">  --content-bg-color: #333;</span><br><span class="line">  --card-bg-color: #555;</span><br><span class="line">  --text-color: #ccc;</span><br><span class="line">  --blockquote-color: #bbb;</span><br><span class="line">  --link-color: #ccc;</span><br><span class="line">  --link-hover-color: #eee;</span><br><span class="line">  --brand-color: #ddd;</span><br><span class="line">  --brand-hover-color: #ddd;</span><br><span class="line">  --table-row-odd-bg-color: #282828;</span><br><span class="line">  --table-row-hover-bg-color: #363636;</span><br><span class="line">  --menu-item-bg-color: #555;</span><br><span class="line">  --btn-default-bg: #222;</span><br><span class="line">  --btn-default-color: #ccc;</span><br><span class="line">  --btn-default-border-color: #555;</span><br><span class="line">  --btn-default-hover-bg: #666;</span><br><span class="line">  --btn-default-hover-color: #ccc;</span><br><span class="line">  --btn-default-hover-border-color: #666;</span><br><span class="line">  --highlight-background: #282b2e;</span><br><span class="line">  --highlight-foreground: #a9b7c6;</span><br><span class="line">  --highlight-gutter-background: #34393d;</span><br><span class="line">  --highlight-gutter-foreground: #9ca9b6;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.darkmode--activated img &#123;</span><br><span class="line">  opacity: 0.75;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.darkmode--activated img:hover &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.darkmode--activated code &#123;</span><br><span class="line">  color: #69dbdc;</span><br><span class="line">  background: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="取消夜间模式"><a href="#取消夜间模式" class="headerlink" title="取消夜间模式"></a>取消夜间模式</h4><ul>
+<li>当某个标签不想使用暗黑&#x2F;夜间模式时，可以添加 darkmode-ignore CSS 类到标签上。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class=&quot;darkmode-ignore&quot;&gt;😬&lt;span&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当然你也可以使用 isolation: isolate; CSS 样式来忽略暗黑&#x2F;夜间模式。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.button &#123;</span><br><span class="line">  isolation: isolate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>也可以使用这种 mix-blend-mode: difference CSS 样式来还原暗黑&#x2F;夜间模式。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.button &#123;</span><br><span class="line">  mix-blend-mode: difference;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><p><img src="/images/pic1.png" alt="sudo字眼没有高光"><br><em>原因</em></p>
+<ol>
+<li>在 Markdown 文件中，如果代码块未指定语言类型，语法高亮引擎可能无法正确解析 sudo。</li>
+<li>主题颜色</li>
+</ol>
+<p><em>解决方案</em></p>
+<ul>
+<li>使用语法高亮主题</li>
+</ul>
+<ol>
+<li>打开 NexT 的配置文件：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">themes/next/_config.yml</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>找到以下设置并修改高亮主题为支持亮色的夜间样式，例如 dracula 或其他亮色主题：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  theme: monokai</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>确保在代码块的开头指定正确的语言类型，例如 bash 或 shell：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mariadb-server mariadb-client -y</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">sudo apt install mariadb-server mariadb-client -y</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>保存后运行以下命令以重新生成：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2025/01/23/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/maple.jpg">
+      <meta itemprop="name" content="枫叶の归宿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫叶の故事">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 枫叶の故事">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/undefined/2025/01/23/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-01-23 21:26:02" itemprop="dateCreated datePublished" datetime="2025-01-23T21:26:02+08:00">2025-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-03 16:19:48" itemprop="dateModified" datetime="2024-12-03T16:19:48+08:00">2024-12-03</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/undefined/2025/01/23/hello-world/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/undefined/2025/01/23/hello-world/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2025/01/22/UnitedCaps-Info/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -205,7 +458,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-23 09:09:31" itemprop="dateModified" datetime="2025-01-23T09:09:31+08:00">2025-01-23</time>
+      <time title="修改时间：2025-01-23 09:09:32" itemprop="dateModified" datetime="2025-01-23T09:09:32+08:00">2025-01-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -323,7 +576,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-01-02 14:19:08 / 修改时间：14:19:46" itemprop="dateCreated datePublished" datetime="2025-01-02T14:19:08+08:00">2025-01-02</time>
+      <time title="创建时间：2025-01-02 14:19:08 / 修改时间：14:19:48" itemprop="dateCreated datePublished" datetime="2025-01-02T14:19:08+08:00">2025-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -419,7 +672,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-01-02 09:37:37 / 修改时间：10:47:23" itemprop="dateCreated datePublished" datetime="2025-01-02T09:37:37+08:00">2025-01-02</time>
+      <time title="创建时间：2025-01-02 09:37:37 / 修改时间：10:47:24" itemprop="dateCreated datePublished" datetime="2025-01-02T09:37:37+08:00">2025-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -613,7 +866,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-02 15:54:48" itemprop="dateModified" datetime="2025-01-02T15:54:48+08:00">2025-01-02</time>
+      <time title="修改时间：2025-01-02 15:54:50" itemprop="dateModified" datetime="2025-01-02T15:54:50+08:00">2025-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -785,7 +1038,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-12-05 09:27:06 / 修改时间：11:58:45" itemprop="dateCreated datePublished" datetime="2024-12-05T09:27:06+08:00">2024-12-05</time>
+      <time title="创建时间：2024-12-05 09:27:06 / 修改时间：11:58:46" itemprop="dateCreated datePublished" datetime="2024-12-05T09:27:06+08:00">2024-12-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -905,7 +1158,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-02 14:19:27" itemprop="dateModified" datetime="2025-01-02T14:19:27+08:00">2025-01-02</time>
+      <time title="修改时间：2025-01-02 14:19:28" itemprop="dateModified" datetime="2025-01-02T14:19:28+08:00">2025-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1004,7 +1257,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-22 09:25:58" itemprop="dateModified" datetime="2025-01-22T09:25:58+08:00">2025-01-22</time>
+      <time title="修改时间：2025-01-22 09:26:00" itemprop="dateModified" datetime="2025-01-22T09:26:00+08:00">2025-01-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1112,157 +1365,6 @@ print(&quot;b is greater than a&quot;) # you will get an error
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2024/12/03/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/maple.jpg">
-      <meta itemprop="name" content="枫叶の归宿">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫叶の故事">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 枫叶の故事">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/undefined/2024/12/03/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">Hexoの夜间模式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-12-03 17:35:25" itemprop="dateCreated datePublished" datetime="2024-12-03T17:35:25+08:00">2024-12-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-11 09:28:20" itemprop="dateModified" datetime="2024-12-11T09:28:20+08:00">2024-12-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Platform/" itemprop="url" rel="index"><span itemprop="name">Platform</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Platform/Hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">Hexoの夜间模式</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/undefined/2024/12/03/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/undefined/2024/12/03/hexo%E3%81%AE%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="添加夜间模式按钮"><a href="#添加夜间模式按钮" class="headerlink" title="添加夜间模式按钮"></a><em>添加夜间模式按钮</em></h4><p>步骤一 安装夜间模式插件 :</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-next-darkmode --save</span><br></pre></td></tr></table></figure>
-<p>步骤二 往 NexT 主题的 _config.yml 配置文件里添加以下内容 :</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Darkmode JS</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js</span></span><br><span class="line">darkmode_js:</span><br><span class="line">  enable: true</span><br><span class="line">  bottom: &#x27;64px&#x27; # default: &#x27;32px&#x27;</span><br><span class="line">  right: &#x27;unset&#x27; # default: &#x27;32px&#x27;</span><br><span class="line">  left: &#x27;32px&#x27; # default: &#x27;unset&#x27;</span><br><span class="line">  time: &#x27;0.5s&#x27; # default: &#x27;0.3s&#x27;</span><br><span class="line">  mixColor: &#x27;transparent&#x27; # default: &#x27;#fff&#x27;</span><br><span class="line">  backgroundColor: &#x27;transparent&#x27; # default: &#x27;#fff&#x27;</span><br><span class="line">  buttonColorDark: &#x27;#100f2c&#x27; # default: &#x27;#100f2c&#x27;</span><br><span class="line">  buttonColorLight: &#x27;#fff&#x27; # default: &#x27;#fff&#x27;</span><br><span class="line">  isActivated: false # default false</span><br><span class="line">  saveInCookies: true # default: true</span><br><span class="line">  label: &#x27;🌓&#x27; # default: &#x27;&#x27;</span><br><span class="line">  autoMatchOsTheme: true # default: true</span><br><span class="line">  libUrl: # Set custom library cdn url for Darkmode.js</span><br></pre></td></tr></table></figure>
-<ul>
-<li>isActivated: true：默认激活暗黑&#x2F;夜间模式，请始终与 saveInCookies: false、autoMatchOsTheme: false 一起使用；同时需要在 NexT 主题的 _config.yml 配置文件里设置 pjax: true，即启用 Pjax。</li>
-</ul>
-<h4 id="自定义css样式"><a href="#自定义css样式" class="headerlink" title="自定义css样式"></a>自定义css样式</h4><p>暗黑&#x2F;夜间模式激活后，插件会将 darkmode–activated CSS 类添加到 body 标签上，你可以利用它覆盖插件默认自带的样式（如下所示），这样就可以实现暗黑&#x2F;夜间模式 CSS 样式的高度自定义。<br>在themes&#x2F;next&#x2F;source&#x2F;css&#x2F;_custom.styl添加以下代码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">.darkmode--activated &#123;</span><br><span class="line">  --body-bg-color: #282828;</span><br><span class="line">  --content-bg-color: #333;</span><br><span class="line">  --card-bg-color: #555;</span><br><span class="line">  --text-color: #ccc;</span><br><span class="line">  --blockquote-color: #bbb;</span><br><span class="line">  --link-color: #ccc;</span><br><span class="line">  --link-hover-color: #eee;</span><br><span class="line">  --brand-color: #ddd;</span><br><span class="line">  --brand-hover-color: #ddd;</span><br><span class="line">  --table-row-odd-bg-color: #282828;</span><br><span class="line">  --table-row-hover-bg-color: #363636;</span><br><span class="line">  --menu-item-bg-color: #555;</span><br><span class="line">  --btn-default-bg: #222;</span><br><span class="line">  --btn-default-color: #ccc;</span><br><span class="line">  --btn-default-border-color: #555;</span><br><span class="line">  --btn-default-hover-bg: #666;</span><br><span class="line">  --btn-default-hover-color: #ccc;</span><br><span class="line">  --btn-default-hover-border-color: #666;</span><br><span class="line">  --highlight-background: #282b2e;</span><br><span class="line">  --highlight-foreground: #a9b7c6;</span><br><span class="line">  --highlight-gutter-background: #34393d;</span><br><span class="line">  --highlight-gutter-foreground: #9ca9b6;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.darkmode--activated img &#123;</span><br><span class="line">  opacity: 0.75;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.darkmode--activated img:hover &#123;</span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.darkmode--activated code &#123;</span><br><span class="line">  color: #69dbdc;</span><br><span class="line">  background: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="取消夜间模式"><a href="#取消夜间模式" class="headerlink" title="取消夜间模式"></a>取消夜间模式</h4><ul>
-<li>当某个标签不想使用暗黑&#x2F;夜间模式时，可以添加 darkmode-ignore CSS 类到标签上。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class=&quot;darkmode-ignore&quot;&gt;😬&lt;span&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>当然你也可以使用 isolation: isolate; CSS 样式来忽略暗黑&#x2F;夜间模式。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.button &#123;</span><br><span class="line">  isolation: isolate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>也可以使用这种 mix-blend-mode: difference CSS 样式来还原暗黑&#x2F;夜间模式。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.button &#123;</span><br><span class="line">  mix-blend-mode: difference;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><p><img src="/images/pic1.png" alt="sudo字眼没有高光"><br><em>原因</em></p>
-<ol>
-<li>在 Markdown 文件中，如果代码块未指定语言类型，语法高亮引擎可能无法正确解析 sudo。</li>
-<li>主题颜色</li>
-</ol>
-<p><em>解决方案</em></p>
-<ul>
-<li>使用语法高亮主题</li>
-</ul>
-<ol>
-<li>打开 NexT 的配置文件：</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">themes/next/_config.yml</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>找到以下设置并修改高亮主题为支持亮色的夜间样式，例如 dracula 或其他亮色主题：</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  theme: monokai</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>确保在代码块的开头指定正确的语言类型，例如 bash 或 shell：</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mariadb-server mariadb-client -y</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">sudo apt install mariadb-server mariadb-client -y</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>保存后运行以下命令以重新生成：</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2024/12/03/Hexo%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1299,7 +1401,7 @@ print(&quot;b is greater than a&quot;) # you will get an error
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-17 10:25:33" itemprop="dateModified" datetime="2024-12-17T10:25:33+08:00">2024-12-17</time>
+      <time title="修改时间：2024-12-17 10:25:34" itemprop="dateModified" datetime="2024-12-17T10:25:34+08:00">2024-12-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1506,195 +1608,6 @@ print(&quot;b is greater than a&quot;) # you will get an error
 <p>6.5 如果你有自己的域名，你可以在这里绑定你自己的自定义域，即可  </p>
 <pre><code>    [图片上传]&lt;br&gt;
 </code></pre>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2024/12/03/SnipeIT/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/maple.jpg">
-      <meta itemprop="name" content="枫叶の归宿">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫叶の故事">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 枫叶の故事">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/undefined/2024/12/03/SnipeIT/" class="post-title-link" itemprop="url">SnipeIT ( Ubuntu 22.04 )</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2024-12-03 09:58:53 / 修改时间：17:50:35" itemprop="dateCreated datePublished" datetime="2024-12-03T09:58:53+08:00">2024-12-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/System/" itemprop="url" rel="index"><span itemprop="name">System</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/System/Platform/" itemprop="url" rel="index"><span itemprop="name">Platform</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/undefined/2024/12/03/SnipeIT/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/undefined/2024/12/03/SnipeIT/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="安装SnipeIT资产管理平台"><a href="#安装SnipeIT资产管理平台" class="headerlink" title="安装SnipeIT资产管理平台"></a>安装SnipeIT资产管理平台</h1><h5 id="1-Update-the-server-and-install-dependencies"><a href="#1-Update-the-server-and-install-dependencies" class="headerlink" title="1. Update the server and install dependencies:"></a>1. Update the server and install dependencies:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update -y &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
-<h5 id="1-1-Install-unzip-dependency"><a href="#1-1-Install-unzip-dependency" class="headerlink" title="1.1 Install unzip dependency"></a>1.1 Install unzip dependency</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install unzip git -y</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-Install-Apache-Webserver"><a href="#2-Install-Apache-Webserver" class="headerlink" title="2. Install Apache Webserver"></a>2. Install Apache Webserver</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install apache2 -y</span><br></pre></td></tr></table></figure>
-<p><em>In case, you enabled firewall and firewall block requests of the apache web server,<br>open a port in the firewall.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 80/tcp</span><br><span class="line">sudo ufw allow 443/tcp</span><br><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure>
-<p><em>Now, verify the Apache installation. Open browser and test default page.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost</span><br></pre></td></tr></table></figure>
-<p><em>Enable Apache’s mod_rewrite module. Snipe-IT requires this extension to rewrite URLs more cleanly.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod rewrite</span><br></pre></td></tr></table></figure>
-
-<p><em>Restart your Apache web server to apply the changes.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure>
-
-<h5 id="3-Install-MariaDB"><a href="#3-Install-MariaDB" class="headerlink" title="3. Install MariaDB"></a>3. Install MariaDB</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mariadb-server mariadb-client -y</span><br></pre></td></tr></table></figure>
-
-<p><em>The default configuration of the MariaDB will not be secured. Let’s secured the installation using the following command:</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql_secure_installation</span><br></pre></td></tr></table></figure>
-
-<p><em>Once the script gets executed, it will ask multiple questions.<br>It will ask you to enter the current password for root (enter for none):<br>Then enter yes&#x2F;y to the following security questions:</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Set a root password? [Y/n]: y</span><br><span class="line">Remove anonymous users? : y</span><br><span class="line">Disallow root login remotely? : y</span><br><span class="line">Remove test database and access to it? : y</span><br><span class="line">Reload privilege tables now? : y</span><br></pre></td></tr></table></figure>
-
-<h5 id="4-Install-PHP-and-PHP-Composer"><a href="#4-Install-PHP-and-PHP-Composer" class="headerlink" title="4. Install PHP and PHP Composer"></a>4. Install PHP and PHP Composer</h5><p><em>Here we are installing the default PHP version 8.1 and other modules for web deployments using the following command:</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install php php-common php-bcmath php-bz2 php-intl php-gd php-mbstring php-mysql php-zip php-opcache php-intl php-json php-mysqli php-readline php-tokenizer php-curl php-ldap -y</span><br></pre></td></tr></table></figure>
-
-<p><em>Install PHP Composer, which is a PHP dependency management tool to install and update libraries in your Snipe-IT.<br>Download the Composer installer.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sS https://getcomposer.org/installer | php</span><br></pre></td></tr></table></figure>
-
-<p><em>Move the composer.phar executable to &#x2F;usr&#x2F;local&#x2F;bin&#x2F;.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv composer.phar /usr/local/bin/composer</span><br></pre></td></tr></table></figure>
-
-<h5 id="5-Create-a-Database"><a href="#5-Create-a-Database" class="headerlink" title="5. Create a Database"></a>5. Create a Database</h5><p><em>Create a database and database user for Snipe-IT. First login into MySQL&#x2F;MariaDB as a root user.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root -p</span><br></pre></td></tr></table></figure>
-
-<p><em>Run following commands to perform this task:</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE snipe_it;</span><br><span class="line">CREATE USER &#x27;snipe_it_user&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;EXAMPLE_PASSWORD&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON snipe_it.* TO &#x27;snipe_it_user&#x27;@&#x27;localhost&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">EXIT;</span><br></pre></td></tr></table></figure>
-
-<p><em>Note: Replace snipe_it_user to your choice username and replace <strong>EXAMPLE_PASSWORD</strong> to you choice password.</em></p>
-<h5 id="6-Install-Snipe-IT"><a href="#6-Install-Snipe-IT" class="headerlink" title="6. Install Snipe-IT"></a>6. Install Snipe-IT</h5><p><em>Navigate to the root directory of your web server.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/</span><br></pre></td></tr></table></figure>
-
-<p><em>Use git to clone the latest Snipe-IT repository from the <a target="_blank" rel="noopener" href="https://github.com/snipe/snipe-it">https://github.com/snipe/snipe-it</a> URL and copy the downloaded files to a snipe-it directory.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git clone https://github.com/snipe/snipe-it snipe-it</span><br></pre></td></tr></table></figure>
-
-<p><em>Switch to the snipe-it directory.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd snipe-it</span><br></pre></td></tr></table></figure>
-
-<p><em>Snipe-IT ships with a sample configuration file. Copy it to &#x2F;var&#x2F;www&#x2F;snipe-it&#x2F;.env.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /var/www/snipe-it/.env.example /var/www/snipe-it/.env</span><br></pre></td></tr></table></figure>
-
-<p><em>Edit the configuration file.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /var/www/snipe-it/.env</span><br></pre></td></tr></table></figure>
-
-<p><em>In the Snipe-IT configuration file, locate these settings.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">APP_URL=null</span><br><span class="line">APP_TIMEZONE=&#x27;UTC&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><em>Set APP_URL to your server’s Fully Qualified Domain Name, or it’s public IP address. If you use a time zone other than UTC, change the timezone to a PHP-supported timezone, and enclose it in single quotes.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">APP_URL=example.com</span><br><span class="line">APP_TIMEZONE=&#x27;America/New_York&#x27;</span><br></pre></td></tr></table></figure>
-
-<p><em>Locate these settings.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DB_DATABASE=null</span><br><span class="line">DB_USERNAME=null</span><br><span class="line">DB_PASSWORD=null</span><br></pre></td></tr></table></figure>
-
-<p><em>Change those values to the database information you set up in Step 3.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DB_DATABASE=snipe_it</span><br><span class="line">DB_USERNAME=snipe_it_user</span><br><span class="line">DB_PASSWORD=EXAMPLE_PASSWORD</span><br></pre></td></tr></table></figure>
-
-<p><em>Save and close the file.</em></p>
-<p><em>Install the Snipe-IT dependencies with Composer. You’ll receive a warning not to run this as root on each command. It’s okay to continue as root for the Snipe-IT install, so type yes and hit ENTER.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">composer update — no-plugins — no-scripts</span><br><span class="line">composer install — no-dev — prefer-source — no-plugins — no-scripts</span><br></pre></td></tr></table></figure>
-
-<p><em>Set the correct ownership and permission for the Snipe-IT data directory.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R www-data:www-data /var/www/snipe-it</span><br><span class="line">sudo chmod -R 777 storage</span><br></pre></td></tr></table></figure>
-
-<p><em>Once the Composer finishes running, generate a Laravel APP_Key value in the &#x2F;var&#x2F;www&#x2F;snipe-it&#x2F;.env configuration file you created earlier. Type yes and hit ENTER when prompted to continue.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo php artisan key:generate</span><br></pre></td></tr></table></figure>
-
-<h5 id="7-Create-a-Virtual-Host-File"><a href="#7-Create-a-Virtual-Host-File" class="headerlink" title="7. Create a Virtual Host File"></a>7. Create a Virtual Host File</h5><p><em>First we’ll disable default Apacheconf file and create new vhost conf file.<br>Disable the default Apache configuration file.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2dissite 000-default.conf</span><br></pre></td></tr></table></figure>
-
-<p><em>Create a new Apache configuration file.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apache2/sites-available/snipe-it.conf</span><br></pre></td></tr></table></figure>
-
-<p><em>Paste the information below and replace example.com with your server’s domain name or public IP address.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName example.com</span><br><span class="line">    DocumentRoot /var/www/snipe-it/public</span><br><span class="line"></span><br><span class="line">    &lt;Directory /var/www/snipe-it/public&gt;</span><br><span class="line">        Options Indexes FollowSymLinks MultiViews</span><br><span class="line">        AllowOverride All</span><br><span class="line">        Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">    ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</span><br><span class="line">    CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
-
-<p><em>Save and exit the file</em></p>
-<p><em>Enable your new configuration file</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2ensite snipe-it.conf</span><br></pre></td></tr></table></figure>
-
-<p><em>Restart your Apache web server to apply the changes.</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure>
-
-<h5 id="8-Run-the-Setup-Wizard"><a href="#8-Run-the-Setup-Wizard" class="headerlink" title="8. Run the Setup Wizard"></a>8. Run the Setup Wizard</h5><p><em>Navigate to your browser and access the setup wizard using your server IP or domain name you have mentioned in vhost conf file.</em></p>
-<p>More info : <a target="_blank" rel="noopener" href="https://hostnextra.medium.com/install-snipe-it-on-ubuntu-22-04-hostnextra-9fec546373c9">Documentation</a></p>
 
       
     </div>

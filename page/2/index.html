@@ -168,6 +168,195 @@
   
   
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2024/12/03/SnipeIT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/maple.jpg">
+      <meta itemprop="name" content="枫叶の归宿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫叶の故事">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 枫叶の故事">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/undefined/2024/12/03/SnipeIT/" class="post-title-link" itemprop="url">SnipeIT ( Ubuntu 22.04 )</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-12-03 09:58:53 / 修改时间：17:50:36" itemprop="dateCreated datePublished" datetime="2024-12-03T09:58:53+08:00">2024-12-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/System/" itemprop="url" rel="index"><span itemprop="name">System</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/System/Platform/" itemprop="url" rel="index"><span itemprop="name">Platform</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/undefined/2024/12/03/SnipeIT/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/undefined/2024/12/03/SnipeIT/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="安装SnipeIT资产管理平台"><a href="#安装SnipeIT资产管理平台" class="headerlink" title="安装SnipeIT资产管理平台"></a>安装SnipeIT资产管理平台</h1><h5 id="1-Update-the-server-and-install-dependencies"><a href="#1-Update-the-server-and-install-dependencies" class="headerlink" title="1. Update the server and install dependencies:"></a>1. Update the server and install dependencies:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update -y &amp;&amp; apt upgrade -y</span><br></pre></td></tr></table></figure>
+<h5 id="1-1-Install-unzip-dependency"><a href="#1-1-Install-unzip-dependency" class="headerlink" title="1.1 Install unzip dependency"></a>1.1 Install unzip dependency</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install unzip git -y</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-Install-Apache-Webserver"><a href="#2-Install-Apache-Webserver" class="headerlink" title="2. Install Apache Webserver"></a>2. Install Apache Webserver</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install apache2 -y</span><br></pre></td></tr></table></figure>
+<p><em>In case, you enabled firewall and firewall block requests of the apache web server,<br>open a port in the firewall.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 80/tcp</span><br><span class="line">sudo ufw allow 443/tcp</span><br><span class="line">sudo ufw reload</span><br></pre></td></tr></table></figure>
+<p><em>Now, verify the Apache installation. Open browser and test default page.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost</span><br></pre></td></tr></table></figure>
+<p><em>Enable Apache’s mod_rewrite module. Snipe-IT requires this extension to rewrite URLs more cleanly.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod rewrite</span><br></pre></td></tr></table></figure>
+
+<p><em>Restart your Apache web server to apply the changes.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-Install-MariaDB"><a href="#3-Install-MariaDB" class="headerlink" title="3. Install MariaDB"></a>3. Install MariaDB</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mariadb-server mariadb-client -y</span><br></pre></td></tr></table></figure>
+
+<p><em>The default configuration of the MariaDB will not be secured. Let’s secured the installation using the following command:</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql_secure_installation</span><br></pre></td></tr></table></figure>
+
+<p><em>Once the script gets executed, it will ask multiple questions.<br>It will ask you to enter the current password for root (enter for none):<br>Then enter yes&#x2F;y to the following security questions:</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Set a root password? [Y/n]: y</span><br><span class="line">Remove anonymous users? : y</span><br><span class="line">Disallow root login remotely? : y</span><br><span class="line">Remove test database and access to it? : y</span><br><span class="line">Reload privilege tables now? : y</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-Install-PHP-and-PHP-Composer"><a href="#4-Install-PHP-and-PHP-Composer" class="headerlink" title="4. Install PHP and PHP Composer"></a>4. Install PHP and PHP Composer</h5><p><em>Here we are installing the default PHP version 8.1 and other modules for web deployments using the following command:</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install php php-common php-bcmath php-bz2 php-intl php-gd php-mbstring php-mysql php-zip php-opcache php-intl php-json php-mysqli php-readline php-tokenizer php-curl php-ldap -y</span><br></pre></td></tr></table></figure>
+
+<p><em>Install PHP Composer, which is a PHP dependency management tool to install and update libraries in your Snipe-IT.<br>Download the Composer installer.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -sS https://getcomposer.org/installer | php</span><br></pre></td></tr></table></figure>
+
+<p><em>Move the composer.phar executable to &#x2F;usr&#x2F;local&#x2F;bin&#x2F;.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv composer.phar /usr/local/bin/composer</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-Create-a-Database"><a href="#5-Create-a-Database" class="headerlink" title="5. Create a Database"></a>5. Create a Database</h5><p><em>Create a database and database user for Snipe-IT. First login into MySQL&#x2F;MariaDB as a root user.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p><em>Run following commands to perform this task:</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE snipe_it;</span><br><span class="line">CREATE USER &#x27;snipe_it_user&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;EXAMPLE_PASSWORD&#x27;;</span><br><span class="line">GRANT ALL PRIVILEGES ON snipe_it.* TO &#x27;snipe_it_user&#x27;@&#x27;localhost&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">EXIT;</span><br></pre></td></tr></table></figure>
+
+<p><em>Note: Replace snipe_it_user to your choice username and replace <strong>EXAMPLE_PASSWORD</strong> to you choice password.</em></p>
+<h5 id="6-Install-Snipe-IT"><a href="#6-Install-Snipe-IT" class="headerlink" title="6. Install Snipe-IT"></a>6. Install Snipe-IT</h5><p><em>Navigate to the root directory of your web server.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/</span><br></pre></td></tr></table></figure>
+
+<p><em>Use git to clone the latest Snipe-IT repository from the <a target="_blank" rel="noopener" href="https://github.com/snipe/snipe-it">https://github.com/snipe/snipe-it</a> URL and copy the downloaded files to a snipe-it directory.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git clone https://github.com/snipe/snipe-it snipe-it</span><br></pre></td></tr></table></figure>
+
+<p><em>Switch to the snipe-it directory.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd snipe-it</span><br></pre></td></tr></table></figure>
+
+<p><em>Snipe-IT ships with a sample configuration file. Copy it to &#x2F;var&#x2F;www&#x2F;snipe-it&#x2F;.env.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /var/www/snipe-it/.env.example /var/www/snipe-it/.env</span><br></pre></td></tr></table></figure>
+
+<p><em>Edit the configuration file.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /var/www/snipe-it/.env</span><br></pre></td></tr></table></figure>
+
+<p><em>In the Snipe-IT configuration file, locate these settings.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">APP_URL=null</span><br><span class="line">APP_TIMEZONE=&#x27;UTC&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><em>Set APP_URL to your server’s Fully Qualified Domain Name, or it’s public IP address. If you use a time zone other than UTC, change the timezone to a PHP-supported timezone, and enclose it in single quotes.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">APP_URL=example.com</span><br><span class="line">APP_TIMEZONE=&#x27;America/New_York&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><em>Locate these settings.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DB_DATABASE=null</span><br><span class="line">DB_USERNAME=null</span><br><span class="line">DB_PASSWORD=null</span><br></pre></td></tr></table></figure>
+
+<p><em>Change those values to the database information you set up in Step 3.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DB_DATABASE=snipe_it</span><br><span class="line">DB_USERNAME=snipe_it_user</span><br><span class="line">DB_PASSWORD=EXAMPLE_PASSWORD</span><br></pre></td></tr></table></figure>
+
+<p><em>Save and close the file.</em></p>
+<p><em>Install the Snipe-IT dependencies with Composer. You’ll receive a warning not to run this as root on each command. It’s okay to continue as root for the Snipe-IT install, so type yes and hit ENTER.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">composer update — no-plugins — no-scripts</span><br><span class="line">composer install — no-dev — prefer-source — no-plugins — no-scripts</span><br></pre></td></tr></table></figure>
+
+<p><em>Set the correct ownership and permission for the Snipe-IT data directory.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R www-data:www-data /var/www/snipe-it</span><br><span class="line">sudo chmod -R 777 storage</span><br></pre></td></tr></table></figure>
+
+<p><em>Once the Composer finishes running, generate a Laravel APP_Key value in the &#x2F;var&#x2F;www&#x2F;snipe-it&#x2F;.env configuration file you created earlier. Type yes and hit ENTER when prompted to continue.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo php artisan key:generate</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-Create-a-Virtual-Host-File"><a href="#7-Create-a-Virtual-Host-File" class="headerlink" title="7. Create a Virtual Host File"></a>7. Create a Virtual Host File</h5><p><em>First we’ll disable default Apacheconf file and create new vhost conf file.<br>Disable the default Apache configuration file.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2dissite 000-default.conf</span><br></pre></td></tr></table></figure>
+
+<p><em>Create a new Apache configuration file.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/apache2/sites-available/snipe-it.conf</span><br></pre></td></tr></table></figure>
+
+<p><em>Paste the information below and replace example.com with your server’s domain name or public IP address.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName example.com</span><br><span class="line">    DocumentRoot /var/www/snipe-it/public</span><br><span class="line"></span><br><span class="line">    &lt;Directory /var/www/snipe-it/public&gt;</span><br><span class="line">        Options Indexes FollowSymLinks MultiViews</span><br><span class="line">        AllowOverride All</span><br><span class="line">        Require all granted</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">    ErrorLog $&#123;APACHE_LOG_DIR&#125;/error.log</span><br><span class="line">    CustomLog $&#123;APACHE_LOG_DIR&#125;/access.log combined</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+<p><em>Save and exit the file</em></p>
+<p><em>Enable your new configuration file</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2ensite snipe-it.conf</span><br></pre></td></tr></table></figure>
+
+<p><em>Restart your Apache web server to apply the changes.</em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure>
+
+<h5 id="8-Run-the-Setup-Wizard"><a href="#8-Run-the-Setup-Wizard" class="headerlink" title="8. Run the Setup Wizard"></a>8. Run the Setup Wizard</h5><p><em>Navigate to your browser and access the setup wizard using your server IP or domain name you have mentioned in vhost conf file.</em></p>
+<p>More info : <a target="_blank" rel="noopener" href="https://hostnextra.medium.com/install-snipe-it-on-ubuntu-22-04-hostnextra-9fec546373c9">Documentation</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/en/2024/12/02/Final-2024/">
 
@@ -205,7 +394,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-02 16:56:11" itemprop="dateModified" datetime="2025-01-02T16:56:11+08:00">2025-01-02</time>
+      <time title="修改时间：2025-01-02 16:56:12" itemprop="dateModified" datetime="2025-01-02T16:56:12+08:00">2025-01-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,108 +441,6 @@
 <h4 id="职场"><a href="#职场" class="headerlink" title="职场"></a>职场</h4><p>依然在探索和学习自己想要追求的技术，虽然说现今已经踏入AI时代，很多资讯可说是轻而易举可以找到和学习，<br>但是对于未来的方向和竞争也偶尔难免会觉得越来越激烈和迷茫。不过依然确信只是有不断学习和迭代才能有创新的想法和灵感，<br>不要怀疑自己的方向，坚持的往前走并追求自己想要的知识和科技。</p>
 <p>有谁不向”钱”看齐，但是君子爱财取之有道，而非盲目的追求成为被钱左右的钱奴，如果说为了钱可以连自己都出卖，哪是否已经连基本的人性都丢失？<br>何谓好工作？好做工的定义是什么？我相信这个问题是见仁见智取决于个人的定义。<br>有得追求平稳低压自由但收入不高;<br>有得追求高薪但背负高压且不自由。</p>
 <p>每个人的际遇不同，如果说某些人在中年以上才实现财务自由，难道这算失败 ?<br>反之，在30之前实现财务自由就算成功 ?<br>这个问题也是取决于个人身边的种种因素如，朋友圈，亲戚，家庭，观看社交媒体的类型等等。<br>所以我逐渐意识到一个人能真正的跟着自己内心做自己的人，不被周遭的诱惑牵动和随波逐流才能在当今时代过得比他人开心。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/undefined/2024/11/18/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/maple.jpg">
-      <meta itemprop="name" content="枫叶の归宿">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="枫叶の故事">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 枫叶の故事">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/undefined/2024/11/18/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-11-18 16:27:50" itemprop="dateCreated datePublished" datetime="2024-11-18T16:27:50+08:00">2024-11-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-03 16:19:46" itemprop="dateModified" datetime="2024-12-03T16:19:46+08:00">2024-12-03</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/undefined/2024/11/18/hello-world/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/undefined/2024/11/18/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
